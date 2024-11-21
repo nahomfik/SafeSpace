@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'motivational_quotes_screen.dart'; // Import the MotivationalQuotesScreen
+import 'motivational_quotes_screen.dart';
 
 void main() {
   runApp(const MyApp());
