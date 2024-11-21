@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'motivational_quotes_screen.dart'; // Import the MotivationalQuotesScreen
 
 void main() {
   runApp(const MyApp());
@@ -6,7 +7,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp
-({super.key});
+      ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +29,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
-title: const Text('The Safe Space'),
+        title: const Text('The Safe Space'),
       ),
       body: Center(
         child: Column(
@@ -37,7 +37,6 @@ title: const Text('The Safe Space'),
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                // Navigate to Motivational Quotes Screen
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MotivationalQuotesScreen()),
@@ -103,23 +102,6 @@ title: const Text('The Safe Space'),
   }
 }
 
-// Create other screens (JournalScreen, MentalExercisesScreen, etc.) similarly
-class MotivationalQuotesScreen extends StatelessWidget {
-  const MotivationalQuotesScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Motivational Quotes'),
-      ),
-      body: const Center(
-        child: Text('Motivational Quotes Content'), 
-      ),
-    );
-  }
-}
-
 class JournalScreen extends StatelessWidget {
   const JournalScreen({super.key});
 
@@ -130,7 +112,7 @@ class JournalScreen extends StatelessWidget {
         title: const Text('Journal'),
       ),
       body: const Center(
-        child: Text('Journal Screen Content'), 
+        child: Text('Journal Screen Content'),
       ),
     );
   }
@@ -146,7 +128,7 @@ class MentalExercisesScreen extends StatelessWidget {
         title: const Text('Mental Exercises'),
       ),
       body: const Center(
-        child: Text('Mental Exercises Screen Content'), 
+        child: Text('Mental Exercises Screen Content'),
       ),
     );
   }
@@ -162,7 +144,7 @@ class SupportHelpScreen extends StatelessWidget {
         title: const Text('Support/Help'),
       ),
       body: const Center(
-        child: Text('Support/Help Content'), 
+        child: Text('Support/Help Content'),
       ),
     );
   }
@@ -178,7 +160,7 @@ class AboutUsScreen extends StatelessWidget {
         title: const Text('About Us'),
       ),
       body: const Center(
-        child: Text('About Us Content'), 
+        child: Text('About Us Content'),
       ),
     );
   }
