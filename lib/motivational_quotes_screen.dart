@@ -9,7 +9,8 @@ class MotivationalQuotesScreen extends StatefulWidget {
 }
 
 class _MotivationalQuotesScreenState extends State<MotivationalQuotesScreen> {
-  String currentQuote = "Press the button for motivation!";
+  String currentQuote = 'Press the button for motivation!';
+  double quoteOpacity = 1.0; 
   final List<String> quotes = [
     "Believe you can and you're halfway there. – Theodore Roosevelt",
             "The only way to do great work is to love what you do. – Steve Jobs",
@@ -42,46 +43,77 @@ class _MotivationalQuotesScreenState extends State<MotivationalQuotesScreen> {
   ];
 
   void generateQuote() {
-    setState(() {
-      currentQuote = quotes[Random().nextInt(quotes.length)];
+    setState(() => quoteOpacity = 0.0); // Fade out
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        currentQuote = quotes[Random().nextInt(quotes.length)];
+        quoteOpacity = 1.0; // Fade in
+      });
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Motivational Quotes'),
-      ),
+      backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10.0),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'Daily Inspiration',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
-              child: Text(
-                currentQuote,
-                style: const TextStyle(fontSize: 18.0),
-                textAlign: TextAlign.center,
+              const SizedBox(height: 30.0),
+              Container(
+                padding: const EdgeInsets.all(30.0), // Increased padding
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: SizedBox( // Added SizedBox to control size
+                  width: 300, // Set a fixed width
+                  child: Text(
+                    opacity: quoteOpacity,
+                    duration: const Duration(milliseconds: 500),
+                    child: Text(
+                      currentQuote,
+                      style: const TextStyle(fontSize: 18.0),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: generateQuote,
-              child: const Text('Get Inspired!'),
-            ),
-            const SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context); // Go back to the previous screen
-              },
-              child: const Text('Back to Home'),
-            ),
-          ],
+              const SizedBox(height: 30.0),
+              Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF8e44ad), Color(0xFF3498db)],
+                  ),
+                ),
+                child: ElevatedButton(
+                  onPressed: generateQuote,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                    backgroundColor: Colors.transparent, // Make button background transparent
+                    shadowColor: Colors.transparent, // Remove button shadow
+                    textStyle: const TextStyle(fontSize: 16.0),
+                  ),
+                  child: const Text('Get Inspired!', style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              const SizedBox(height: 20.0),
+            ],
+          ),
         ),
       ),
     );
