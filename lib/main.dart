@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'motivational_quotes_screen.dart';
+import 'journal_screen.dart';
+import 'mental_exercises_screen.dart';
+import 'support_help_screen.dart';
+import 'about_us_screen.dart';
+import 'settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp
-      ({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +43,8 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MotivationalQuotesScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const MotivationalQuotesScreen()),
                 );
               },
               child: const Text('Motivational Quotes'),
@@ -49,7 +54,8 @@ class HomeScreen extends StatelessWidget {
                 // Navigate to Journal Screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const JournalScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const JournalScreen()),
                 );
               },
               child: const Text('Journal'),
@@ -59,7 +65,8 @@ class HomeScreen extends StatelessWidget {
                 // Navigate to Mental Exercises Screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MentalExercisesScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const MentalExercisesScreen()),
                 );
               },
               child: const Text('Mental Exercises'),
@@ -69,7 +76,8 @@ class HomeScreen extends StatelessWidget {
                 // Navigate to Support/Help Screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SupportHelpScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const SupportHelpScreen()),
                 );
               },
               child: const Text('Support/Help'),
@@ -79,7 +87,8 @@ class HomeScreen extends StatelessWidget {
                 // Navigate to About Us Screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const AboutUsScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const AboutUsScreen()),
                 );
               },
               child: const Text('About Us'),
@@ -89,7 +98,8 @@ class HomeScreen extends StatelessWidget {
                 // Navigate to Settings Screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()),
                 );
               },
               child: const Text('Settings'),
@@ -102,21 +112,6 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class JournalScreen extends StatelessWidget {
-  const JournalScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Journal'),
-      ),
-      body: const Center(
-        child: Text('Journal Screen Content'),
-      ),
-    );
-  }
-}
 
 class MentalExercisesScreen extends StatelessWidget {
   const MentalExercisesScreen({super.key});
@@ -176,7 +171,7 @@ class SettingsScreen extends StatelessWidget {
         title: const Text('Settings'),
       ),
       body: const Center(
-        child: Text('Settings Content'), 
+        child: Text('Settings Content'),
       ),
     );
   }
