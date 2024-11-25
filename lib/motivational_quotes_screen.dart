@@ -57,6 +57,16 @@ class _MotivationalQuotesScreenState extends State<MotivationalQuotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Motivational Quotes'),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Example color
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); // Navigate back to the previous screen
+          },
+        ),
+      ),
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(
@@ -81,14 +91,13 @@ class _MotivationalQuotesScreenState extends State<MotivationalQuotesScreen> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: SizedBox( // Added SizedBox to control size
-                  width: 300, // Set a fixed width
-                  child: Text(
+                  width: 350, // Set a fixed width
+                  child: AnimatedOpacity(
                     opacity: quoteOpacity,
                     duration: const Duration(milliseconds: 500),
-                    child: Text(
-                      currentQuote,
+                    child: Text(currentQuote,
                       style: const TextStyle(fontSize: 18.0),
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.center
                     ),
                   ),
                 ),
