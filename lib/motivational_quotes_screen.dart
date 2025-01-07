@@ -38,8 +38,19 @@ class _MotivationalQuotesScreenState extends State<MotivationalQuotesScreen> {
             "The harder you work, the luckier you get. – Gary Player",
             "The only limit to our realization of tomorrow will be our doubts of today. – Franklin D. Roosevelt",
             "Success usually comes to those who are too busy to be looking for it. – Henry David Thoreau",
-            "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart. – Roy T. Bennett",
-    // ... add more quotes here ...
+            "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+            "Challenges are what make life interesting and overcoming them is what makes life meaningful. - Joshua Marine",
+            "The secret of getting ahead is getting started. - Mark Twain",
+            "Fall seven times, stand up eight. - Japanese Proverb",
+            "Be the change that you wish to see in the world. - Mahatma Gandhi",
+            "Happiness is not something ready made. It comes from your own actions. - Dalai Lama",
+            "Happiness is not the absence of problems, it's the ability to deal with them. - Steve Maraboli",
+            "Success is liking yourself, liking what you do, and liking how you do it. - Maya Angelou",
+            "Every strike brings me closer to the next home run. - Babe Ruth",
+            "The key to success is to start before you are ready. - Marie Forleo",
+            "The man who moves a mountain begins by carrying away small stones. - Confucius",
+            "A year from now you may wish you had started today. - Karen Lamb",
+            "Go the extra mile. It's never crowded. - Wayne Dyer",//. add more quotes here ...
   ];
 
   void generateQuote() {
