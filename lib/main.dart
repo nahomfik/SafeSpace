@@ -109,23 +109,6 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-
-class MentalExercisesScreen extends StatelessWidget {
-  const MentalExercisesScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Mental Exercises'),
-      ),
-      body: const Center(
-        child: Text('Mental Exercises Screen Content'),
-      ),
-    );
-  }
-}
-
 class SupportHelpScreen extends StatelessWidget {
   const SupportHelpScreen({super.key});
 
