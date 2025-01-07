@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'motivational_quotes_screen.dart';
 import 'journal_screen.dart';
 import 'mental_exercises_screen.dart';
-import 'support_help_screen.dart';
-import 'about_us_screen.dart';
-import 'settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
