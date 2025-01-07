@@ -50,8 +50,7 @@ class _MotivationalQuotesScreenState extends State<MotivationalQuotesScreen> {
             "The key to success is to start before you are ready. - Marie Forleo",
             "The man who moves a mountain begins by carrying away small stones. - Confucius",
             "A year from now you may wish you had started today. - Karen Lamb",
-            "Go the extra mile. It's never crowded. - Wayne Dyer",
-    // ... add more quotes here ...
+            "Go the extra mile. It's never crowded. - Wayne Dyer",//. add more quotes here ...
   ];
 
   void generateQuote() {
