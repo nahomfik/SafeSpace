@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'motivational_quotes_screen.dart';
 import 'journal_screen.dart';
 import 'mental_exercises_screen.dart';
-import 'support_help_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +31,20 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('The Safe Space'),
+        actions: [
+          // Support/Help button in the AppBar
+          IconButton(
+            icon: const Icon(Icons.help_outline), 
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SupportHelpScreen(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -60,28 +73,6 @@ class HomeScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigate to Mental Exercises Screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MentalExercisesScreen()),
-                );
-              },
-              child: const Text('Mental Exercises'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to Support/Help Screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SupportHelpScreen()),
-                );
-              },
-              child: const Text('Support/Help'),
-            ),
-            ElevatedButton(
-              onPressed: () {
                 // Navigate to About Us Screen
                 Navigator.push(
                   context,
@@ -102,7 +93,17 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Settings'),
             ),
-            // Add other buttons for Support/Help, About Us, Settings similarly
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to Mental Exercises Screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MentalExercisesScreen()),
+                );
+              },
+              child: const Text('Mental Exercises'),
+            ),
           ],
         ),
       ),
