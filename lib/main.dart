@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'motivational_quotes_screen.dart';
 import 'journal_screen.dart';
 import 'mental_exercises_screen.dart';
+import 'support_help_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -104,22 +105,6 @@ class HomeScreen extends StatelessWidget {
             // Add other buttons for Support/Help, About Us, Settings similarly
           ],
         ),
-      ),
-    );
-  }
-}
-
-class SupportHelpScreen extends StatelessWidget {
-  const SupportHelpScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Support/Help'),
-      ),
-      body: const Center(
-        child: Text('Support/Help Content'),
       ),
     );
   }
