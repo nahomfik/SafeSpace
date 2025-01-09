@@ -18,50 +18,41 @@ class _SupportHelpScreenState extends State<SupportHelpScreen> {
         title: const Text('Support/Help'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Frequently Asked Questions',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: isDarkMode ? Colors.white : Colors.black,
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView( 
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const Text(
+                'Resources for Mental Health Support',                
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-            ),
-            const SizedBox(height: 10),
-            // ... (Add FAQ items here, similar to the HTML structure)
-            const SizedBox(height: 20),
-            Text(
-              'Contact Us',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: isDarkMode ? Colors.white : Colors.black,
+              const SizedBox(height: 10),
+              _buildLink('National Alliance on Mental Illness (NAMI)', 'https://www.nami.org', fontSize: 18),
+              _buildLink('MentalHealth.gov', 'https://www.mentalhealth.gov', fontSize: 18),
+              _buildLink('National Suicide Prevention Lifeline', 'https://www.suicidepreventionlifeline.org', fontSize: 18),
+              _buildLink('Crisis Text Line: Text HOME to 741741','https://www.crisistextline.org', fontSize: 18), 
+              _buildLink('Find a Therapist', 'https://www.therapistlocator.com', fontSize: 18),
+              const SizedBox(height: 20),
+              const Text(
+                'Contact Numbers',                
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),                
               ),
-            ),
-            const SizedBox(height: 10),
-            InkWell(
-              onTap: () => launchUrl(Uri.parse('mailto:support@example.com')),
-              child: Text(
-                'Email: support@example.com',
-                style: TextStyle(
-                  color: isDarkMode ? Colors.blue : Colors.blue,
-                ),
-              ),
-            ),
-            // ... (Add other contact information)
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Back to Home'),
-            ),
-          ],
+              const SizedBox(height: 10),
+              RichText(text: const TextSpan(children: [TextSpan(text: 'National Suicide Prevention Lifeline: ', style: TextStyle(fontSize: 18)), TextSpan(text: '(800) 273-8255', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18))])),
+              RichText(text: const TextSpan(children: [TextSpan(text: 'Crisis Text Line: ', style: TextStyle(fontSize: 18)), TextSpan(text: 'Text HOME to 741741', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18))])),
+              RichText(text: const TextSpan(children: [TextSpan(text: 'Substance Abuse and Mental Health Services Administration (SAMHSA): ', style: TextStyle(fontSize: 18)), TextSpan(text: '(800) 662-HELP (4357)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18))])),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Widget _buildLink(String text, String url, {double fontSize = 16}) {
+    return InkWell(
+      onTap: () => launchUrl(Uri.parse(url)),
+      child: Text(text, style: TextStyle(color: Colors.blue, fontSize: fontSize)),
     );
   }
 }
